@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>36</ModuleId>
+  <ModuleName>AbeBook_OrderConfirmation</ModuleName>
+  <ModuleAssembly>AbeBook_OrderConfirmation.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ApIURL>https://orderupdate.abebooks.com:10003</ApIURL>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+  <MarketPlaceName>AbeBooks.com</MarketPlaceName>
+</Module>

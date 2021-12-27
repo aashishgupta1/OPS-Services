@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>2</ModuleId>
+  <ModuleName>PaymentLinkGeneration</ModuleName>
+  <ModuleAssembly>PaymentLinkGeneration.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ApIURL>https://api.paypal.com/v1/oauth2/</ApIURL>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+  <MerchantInfo>
+    <email>amit@gyanbooks.com</email>
+    <first_name>Amit</first_name>
+    <last_name>Garg</last_name>
+    <business_name>gyanbooks.com</business_name>
+    <phone>
+      <country_code>0091</country_code>
+      <national_number>9899492060</national_number>
+    </phone>
+  </MerchantInfo>
+  <note>Thank you for your business.</note>
+  <terms>No refunds after 30 days.</terms>
+  <Emails>
+    <Email>
+      <IsBodyHtml>true</IsBodyHtml>
+      <To>to@email.com</To>
+      <CC>cc@email.com</CC>
+      <BCC></BCC>
+      <Subject>Failed File Notification</Subject>
+      <Body>
+        Following files failed:  $[FileName]
+      </Body>
+    </Email>
+  </Emails>
+</Module>

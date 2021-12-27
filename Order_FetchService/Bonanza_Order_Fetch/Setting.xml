@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>3</ModuleId>
+  <ModuleName>Bonanza_Order_Fetch</ModuleName>
+  <ModuleAssembly>Bonanza_Order_Fetch.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ApIURL>https://api.bonanza.com/api_requests/secure_request</ApIURL>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+  <UserName>GYANBOOK</UserName>
+  <Password>c3e77de2c52f4b979cb6</Password>
+  <MarketPlaceName>Bonanza.com</MarketPlaceName>
+</Module>

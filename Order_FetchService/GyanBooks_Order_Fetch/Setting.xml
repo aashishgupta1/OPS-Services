@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>36</ModuleId>
+  <ModuleName>GyanBooks_Order_Fetch</ModuleName>
+  <ModuleAssembly>GyanBooks_Order_Fetch.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ApIURL>https://www.gyanbooks.com/order/api/orderapicurl.php?chkfield2=paymentstatus&amp;chkvalue2=0&amp;json=1</ApIURL>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+  <UserName>order</UserName>
+  <Password>Order@#$API2018</Password>
+  <MarketPlaceName>GyanBooks.com</MarketPlaceName>
+</Module>

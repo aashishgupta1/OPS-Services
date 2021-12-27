@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>36</ModuleId>
+  <ModuleName>BookTreasury_Order_Fetch</ModuleName>
+  <ModuleAssembly>BookTreasury_Order_Fetch.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ApIURL>http://bookstreasury.com/index.php/api/orders</ApIURL>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+  <MarketPlaceName>BookTreasury.com</MarketPlaceName>
+</Module>

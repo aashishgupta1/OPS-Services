@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>11</ModuleId>
+  <ModuleName>Alibris_OrderConfirmation</ModuleName>
+  <ModuleAssembly>Alibris_OrderConfirmation.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+  <FTPDetails>
+    <FTPHost>ftp://ftp.alibris.com/upload/</FTPHost>
+    <UserName>Rreprint</UserName>
+    <Password>Gyan@books</Password>
+  </FTPDetails>>
+  <FileSystemSettings>
+    <OutputPath>
+      <Path>D:\Personal\OPS\AbeBooksOrderIntegeration\AbeBookOrderIntegeration\Alibris_OrderFetch\IN</Path>
+    </OutputPath>
+  </FileSystemSettings>
+  <MarketPlaceName>Alibris.com</MarketPlaceName>
+</Module>

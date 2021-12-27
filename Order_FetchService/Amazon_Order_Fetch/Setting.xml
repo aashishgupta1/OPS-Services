@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>36</ModuleId>
+  <ModuleName>Amazon_Order_Fetch</ModuleName>
+  <ModuleAssembly>Amazon_Order_Fetch.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+  <MarketPlaceName>Amazon.com</MarketPlaceName>
+  <ApIURL>https://mws.amazonservices.com</ApIURL>
+</Module>

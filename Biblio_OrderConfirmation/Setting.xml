@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>10</ModuleId>
+  <ModuleName>Biblio_OrderConfirmation</ModuleName>
+  <ModuleAssembly>Biblio_OrderConfirmation.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+  <FTPDetails>
+    <FTPHost>ftp://FTP.biblio.com/fulfillment</FTPHost>
+    <UserName>facsimile</UserName>
+    <Password>bibfacsimile</Password>
+  </FTPDetails>>
+  <FileSystemSettings>
+    <InputPath>
+      <Path>D:\Personal\OPS\AbeBooksOrderIntegeration\AbeBookOrderIntegeration\BiblioOrderFetch\IN</Path>
+    </InputPath>
+    <OutputPath>
+      <Path>D:\Personal\OPS\AbeBooksOrderIntegeration\AbeBookOrderIntegeration\BiblioOrderFetch\OUT</Path>
+    </OutputPath>
+  </FileSystemSettings>
+  <MarketPlaceName>Biblio.com</MarketPlaceName>
+</Module>

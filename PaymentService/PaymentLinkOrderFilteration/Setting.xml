@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+  <ModuleId>2</ModuleId>
+  <ModuleName>PaymentLinkOrderFilteration</ModuleName>
+  <ModuleAssembly>PaymentLinkOrderFilteration.dll</ModuleAssembly>
+
+  <CronExpression>0 0/5 * * * ?</CronExpression>
+  <ApIURL>https://orderupdate.abebooks.com:10003</ApIURL>
+  <ODBCSetting>
+    <InheritConfiguration>TRUE</InheritConfiguration>
+  </ODBCSetting>
+</Module>

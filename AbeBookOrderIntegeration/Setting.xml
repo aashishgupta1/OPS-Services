@@ -1,0 +1,16 @@
+<Module>
+  <ODBCSetting>
+    <DatabaseServer>localhost</DatabaseServer>
+    <Database>OPS</Database>
+    <DatabaseUserName>sa</DatabaseUserName>
+    <DatabasePassword>System123#</DatabasePassword>
+  </ODBCSetting>
+  <MultiLevel>FALSE</MultiLevel>
+  <MailServerSettings>
+    <EnableSSL>true</EnableSSL>
+    <SmtpHost>mail.gyanbooks.com</SmtpHost>
+    <SmtpPort>587</SmtpPort>
+    <SmtpEmail>sales@gyanbooks.com</SmtpEmail>
+    <SmtpPassword IsEncrypted="false">Sales@gyan@$1984</SmtpPassword>
+  </MailServerSettings>
+</Module>

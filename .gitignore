@@ -1,0 +1,47 @@
+
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+.datasource
+[Tt]est[Rr]esult*
+*.datasource
+*.suo
+.vs
+
+
+Publish/
+
+/1. Universal.Client/metasonic.Universal.Client/ClientApp/src/browserslist
+/4. Universal.Context/metasonic.Universal.Context/Migrations/20191204065846_InitialCreate.cs
+/4. Universal.Context/metasonic.Universal.Context/Migrations/20191204065846_InitialCreate.Designer.cs
+
+/2. Universal.Integrator/metasonic.Universal.Integrator/UniversalClientDatabase.sqlite-shm
+/2. Universal.Integrator/metasonic.Universal.Integrator/UniversalClientDatabase.sqlite-wal
+/1. Universal.Client/metasonic.Universal.Client/ClientApp/src/environments/environment.ts
+/1. Universal.Client/metasonic.Universal.Client/ClientApp/src/environments/environment.prod.ts
+/2. Universal.Integrator/metasonic.Universal.Integrator/UniversalClientDatabase.sqlite
+**/appsettings.Development.json

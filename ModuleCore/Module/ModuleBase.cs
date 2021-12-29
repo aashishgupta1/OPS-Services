@@ -442,7 +442,11 @@ namespace ModuleCore
         public DataTable GetMarketPlacedetail(string marketPlaceName)
         {
             DataTable dt = new DataTable();
-            DBOperation.ExecuteDBOperation("Select * from MarketPlaceMaster where IsActive = 1 and WebSiteLink='" + marketPlaceName + "'", DBOperation.OperationType.SELECT, null, ref dt);
+            string sRetVal = DBOperation.ExecuteDBOperation("Select * from MarketPlaceMaster where IsActive = 1 and WebSiteLink='" + marketPlaceName + "'", DBOperation.OperationType.SELECT, null, ref dt);
+            if(sRetVal != "SUCCESS")
+            {
+                logger.LogError(sRetVal);
+            }
             return dt;
         }
     }

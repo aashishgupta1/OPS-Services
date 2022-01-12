@@ -184,15 +184,15 @@ namespace AbeBookOrderFetch
             string sOrderQuery = "INSERT INTO OrderDetails(OrderId, buyerID, email, CustomerAddress_city, CustomerAddress_code, CustomerAddress_name, CustomerAddress_country, CustomerAddress_phone, CustomerAddress_region, CustomerAddress_street, CustomerAddress_street2, buyerPurchaseOrderID, domainID, domainName, orderDateTime, orderTotals_gst_amount, orderTotals_gst_currency, orderTotals_handling_amount, orderTotals_handling_currency, orderTotals_shipping_amount, orderTotals_shipping_currency, orderTotals_subtotal_amount, orderTotals_subtotal_currency, orderTotals_tax_amount, orderTotals_tax_currency, orderTotals_total_amount, orderTotals_total_currency, purchaseMethod, OrderItemID, bookID, isbn,author,description,title,Quantity, price, currency, vendorKey, sellerTotal, sellerTotal_currency, status_code, mpstatus, resellerid, sellerid, extraItemShippingCost, extraItemShippingCost_currency, firstItemShippingCost, firstItemShippingCost_currency, maxDeliveryDays, minDeliveryDays, trackingCode, specialInstructions, CurrentProcess, CurrentStatus, Createdon, CreatedBy, LastModifiedOn, LastModifiedBy, IsActive)VALUES("
                     + "'" + purchaseOrder.id + "'"
                     + ",'" + purchaseOrder.buyer.id + "'"
-                    + ",'" + purchaseOrder.buyer.email + "'"
-                    + ",'" + purchaseOrder.buyer.mailingAddress.city + "'"
+                    + ",'" + purchaseOrder.buyer.email.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'"
+                    + ",'" + purchaseOrder.buyer.mailingAddress.city.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'"
                     + ",'" + purchaseOrder.buyer.mailingAddress.code + "'"
-                    + ",'" + purchaseOrder.buyer.mailingAddress.name + "'"
-                    + ",'" + purchaseOrder.buyer.mailingAddress.country + "'"
+                    + ",'" + purchaseOrder.buyer.mailingAddress.name.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'"
+                    + ",'" + purchaseOrder.buyer.mailingAddress.country.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'"
                     + ",'" + purchaseOrder.buyer.mailingAddress.phone + "'"
-                    + ",'" + purchaseOrder.buyer.mailingAddress.region + "'"
-                    + ",'" + purchaseOrder.buyer.mailingAddress.street.Replace("'", "''") + "'"
-                    + ",'" + purchaseOrder.buyer.mailingAddress.street2.Replace("'", "''") + "'"
+                    + ",'" + purchaseOrder.buyer.mailingAddress.region.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'"
+                    + ",'" + purchaseOrder.buyer.mailingAddress.street.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'"
+                    + ",'" + purchaseOrder.buyer.mailingAddress.street2.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'"
                     + ",'" + purchaseOrder.buyerPurchaseOrder.id + "'"
                     + ",'" + purchaseOrder.domain.id + "'"
                     + ",'" + purchaseOrder.domain.name + "'"
@@ -220,7 +220,7 @@ namespace AbeBookOrderFetch
                     + ",'" + purchaseOrder.shipping.maxDeliveryDays + "'"
                     + ",'" + purchaseOrder.shipping.minDeliveryDays + "'"
                     + ",'" + purchaseOrder.shipping.trackingCode + "'"
-                    + ",'" + purchaseOrder.specialInstructions.Replace("'", "''") + "'"
+                    + ",'" + purchaseOrder.specialInstructions.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'"
                     + ",1"
                     + ",'InProcess'"
                     + ", getdate()"
@@ -234,18 +234,19 @@ namespace AbeBookOrderFetch
                 sOrderItem += ",'" + orderItem.id + "'";
                 sOrderItem += ",'" + orderItem.book.id + "'";
                 sOrderItem += ",'" + orderItem.book.isbn + "'";
-                sOrderItem += ",'" + orderItem.book.author.Replace("'", "''") + "'";
-                sOrderItem += ",'" + orderItem.book.description.Replace("'", "''") + "'";
-                sOrderItem += ",'" + orderItem.book.title.Replace("'", "''") + "'";
+                sOrderItem += ",'" + orderItem.book.author.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'";
+                sOrderItem += ",'" + (orderItem.book.description.Length > 1500 ? orderItem.book.description.Substring(0, 1500) : orderItem.book.description).Replace("'", "").Replace("’", "").Replace("‘", "") + "'";
+                sOrderItem += ",'" + orderItem.book.title.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'";
                 sOrderItem += ",'1'";
                 sOrderItem += ",'" + orderItem.book.price.value + "'";
                 sOrderItem += ",'" + orderItem.book.price.currency + "'";
-                sOrderItem += ",'" + orderItem.book.vendorKey + "'";
+                sOrderItem += ",'" + orderItem.book.vendorKey.Replace("'", "''").Replace("’", "").Replace("‘", "") + "'";
                 sOrderItem += ",'" + orderItem.sellerTotal.value + "'";
                 sOrderItem += ",'" + orderItem.sellerTotal.currency + "'";
                 sOrderItem += ",'" + orderItem.status.code + "'";
-                sOrderItem += ",'" + orderItem.status.value + "'";
-                lstOrderItemQuery.Add(new KeyValuePair<string, string>(orderItem.id, string.Format(sOrderQuery, sOrderItem)));
+                sOrderItem += ",'" + orderItem.status.value.Replace("'", "''").Replace("’", "") + "'";
+                string sQuery = string.Format(sOrderQuery, sOrderItem.Replace("--", "").Replace("‘", "").Replace("’", ""));
+                lstOrderItemQuery.Add(new KeyValuePair<string, string>(orderItem.id, sQuery));
             }
             orderID = purchaseOrder.id;
             return lstOrderItemQuery;
